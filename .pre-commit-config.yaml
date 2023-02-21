@@ -1,0 +1,15 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.8.0
+    hooks:
+      - id: black
+        types: [python]
+  - repo: local
+    hooks:
+      - id: update-readme
+        name: update readme
+        always_run: true
+        entry: python _update.py
+        language: system
